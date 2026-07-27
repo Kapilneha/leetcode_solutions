@@ -15,3 +15,14 @@ def containsDuplicate(nums):
 nums = list(map(int, input("Enter numbers: ").split()))
 
 print(containsDuplicate(nums))
+
+
+# method 2 
+def containsDuplicate(nums):
+
+    seen = set(nums)
+
+    if len(seen) == len(nums):
+        return False
+
+    return True
