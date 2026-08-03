@@ -1,18 +1,18 @@
-def reverseString(s):
+def leftRotateByOne(arr):
 
-    i = 0
-    j = len(s) - 1
+    if len(arr) <= 1:
+        return arr
 
-    while i < j:
-        s[i], s[j] = s[j], s[i]
-        i += 1
-        j -= 1
+    temp = arr[0]
 
-    return s
+    for i in range(len(arr) - 1):
+        arr[i] = arr[i + 1]
+
+    arr[-1] = temp
+
+    return arr
 
 
-s = input("Enter a string: ")
+arr = [1, 2, 3, 4, 5]
 
-result = reverseString(list(s))
-
-print(result)
+print(leftRotateByOne(arr))

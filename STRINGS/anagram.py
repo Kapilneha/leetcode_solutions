@@ -1,0 +1,21 @@
+def anagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+
+    freq= {}
+    for ch in s1:
+        freq[ch]= freq.get(ch,0)+1
+
+    for ch in s2:
+        if ch not in freq:
+            return False
+     
+        freq[ch] -= 1
+        
+        if freq[ch] < 0:
+            return False
+    return True
+
+s1 = input("s1:")
+s2 = input("s2:")
+print(anagram(s1, s2))
